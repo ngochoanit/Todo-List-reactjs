@@ -5,14 +5,14 @@ class TodoItem extends Component{
    
     render() {
         
-        const {item,onChange,deleteItem}=this.props;
+        const {item,onChange,onDeleteItem}=this.props;
         
         return (
             <li className={classNames({'completed':item.isComplate})}>
                 <div className="view">
                     <input className="toggle" type="Checkbox" checked={item.isComplate} onChange={onChange}></input>
                     <label>{item.title}</label>
-                    <button className="destroy" onClick={deleteItem}></button>
+                    <button className="destroy" onClick={onDeleteItem}></button>
                 </div>
                
             </li>
