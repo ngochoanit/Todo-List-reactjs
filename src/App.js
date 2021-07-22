@@ -1,15 +1,17 @@
 // import logo from './logo.svg';
 import React,{ Component} from 'react';
-import './App.css';
+
 import TodoItem from './components/TodoItem';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import storage from './util/storage';
+
+import './App.css';
 import "./public/css/base.css"
 import "./public/css/index.css"
 class  App extends Component {
-  constructor(){
-    super();
+  constructor(props) {
+    super(props);
     this.state={
       filter:'all',
       newItem:'',
@@ -20,7 +22,9 @@ class  App extends Component {
       active:(item)=>{return !item.isComplate},
       completed:(item)=>{return item.isComplate}
     }
+    this.inputEle=React.createRef();
   }
+  
   // handle click checked item
   onItemChecked(item){
     return (event)=>{
@@ -57,7 +61,7 @@ class  App extends Component {
             ...this.state.todoItems
           ]
         },()=>{storage.set(this.state.todoItems)})
-        event.target.blur();
+        // event.target.blur();
       }
      
     }
