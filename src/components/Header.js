@@ -6,6 +6,7 @@ class Header extends Component {
         super(props);
         this.inputEle=React.createRef();
     }
+    //
     componentDidMount(){
         this.inputEle.current.focus();
       }
